@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'hardpixel';
+    src: url('hardpixel-webfont.eot');
+    src: url('hardpixel-webfont.eot?#iefix') format('embedded-opentype'),
+         url('hardpixel-webfont.woff2') format('woff2'),
+         url('hardpixel-webfont.woff') format('woff'),
+         url('hardpixel-webfont.ttf') format('truetype'),
+         url('hardpixel-webfont.svg#hardpixelregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
