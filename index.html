@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Jay Dance</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+    <meta property="og:title" content="Jay Dance. Game by Soika Studio"/>
+    <meta name="twitter:title" content="Jay Dance. Game by Soika Studio"/>
+    <meta property="og:type" content="game"/>
+    <meta property="og:url" content="http://game.soika-studio.com/"/>
+    <meta name="twitter:domain" content="http://game.soika-studio.com/"/>
+    <meta property="og:image" content="http://game.soika-studio.com/img/Facebook_post2.png"/>
+    <meta property="og:image:url" content="http://game.soika-studio.com/img/Facebook_post2.png"/>
+    <meta property="og:site_name" content="Jay Dance"/>
+    <meta name="twitter:site" content="Jay Dance"/>
+    <meta property="fb:app_id" content="535690326582386" />
+    <meta property="article:author" content="https://www.facebook.com/soikastudio" />
+    <meta name="twitter:creator" content="@soikastudio" />
+    <meta property="article:publisher" content="http://soika-studio.com/" />
+    <meta property="og:description" content="Tap and dance!"/>
+    <meta name="twitter:description" content="Tap and dance!"/>
+    <meta name="twitter:image:src" content="http://game.soika-studio.com/img/Facebook_post2.png"/>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-55984655-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script>
+        window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '535690326582386',
+          xfbml      : true,
+          version    : 'v2.4'
+        });
+        };
+
+        (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+    <link href="css/styles.min.css" rel="stylesheet">
+    <link href="font/stylesheet.css" rel="stylesheet">
+</head>
+<body>
+    <div id="fps"></div>
+    
+    <div id="gameArea" class="content">
+        <div id="gameZone" class="game game_intro">
+            <div class="speaker_l"><img src="img/speaker_l.gif"></div>
+            <div class="speaker_r"><img src="img/speaker_r.gif"></div>
+            <div id="introDesctop" class="step__intro">
+                <div class="intro">
+                    <a href="http://game.soika-studio.com/"><img src="img/logo.png"></a>
+                    <h1>Tap and dance!</h1>
+
+                    <div id="intro__shoose" >
+                        <div>Choose your device</div>
+                        <div class="intro__shoose-wrap">
+                            <!-- <div class="intro__shoose-item" id="shoose-mob">
+                                <img class="intro__shoose-icon" src="img/mob-icon.png">
+                                <span class="intro__shoose-text">Mobile</span>
+                            </div> -->
+                            <div class="intro__shoose-item intro__shoose-item_r" id="shoose-key">
+                                <img class="intro__shoose-icon" src="img/mob-key.png">
+                                <span class="intro__shoose-text">Keyboard</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="intro__mob_set" class="hide">
+                        <span class="text">
+                            Open this link on your mobile device 
+                            <div class="intro__link-mob">goo.gl/1e7gNj</div>
+                        </span>
+                        <span class="text">
+                            Enter the Code below and your Name<br>
+                            <span class="code" id="hostId"></span>
+                        </span>
+                    </div>
+                    <div id="intro__mob_key" class="hide">
+                        <span class="text">
+                            Enter the your name<br>
+                            <input id="playerName" value="Test" maxlength="12" class="game-input-name" type="text" placeholder="Name"><br>
+                            <button id="playerJoinGame" type="submit" class="submit">Join</button>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <div id="intro__press-start" class="intro__press-start">Press <span id="startBtnText" class="intro__press-btn-text">Start</span> to begin</div>
+            <div id="scenePlaying" class="step">
+                    <div class="jay-game-logo"><a href="http://game.soika-studio.com/"><img src="img/logo.png"></a></div>
+                    <div class="game-score">
+                        Score
+                        <div id="game-score-val" class="game-score-big">0</div>
+                    </div>
+                    <div class="game-heart">
+                        Health
+                        <div id="game-heart-val">
+                            <i id="game-heart_0" class="game-heart-item game-heart-item_active"></i>
+                            <i id="game-heart_1" class="game-heart-item game-heart-item_active"></i>
+                            <i id="game-heart_2" class="game-heart-item game-heart-item_active"></i>
+                        </div>
+                    </div>
+                    <div class="game-winner">
+                        Top 5 players
+                        <ol id="game-winner-list" class="winner-list">
+                        </ol>
+                    </div>
+                    <div class="game-texts">
+                        <div class="game-combo" id="game-combo-2">VERY NICE!</div>
+                        <div class="game-combo" id="game-combo-3">x3</div>
+                        <div class="game-combo" id="game-combo-4">PERFECT!</div>
+                        <div class="game-combo" id="game-combo-5">COMBO!</div>
+                        <div class="game-combo" id="game-combo-6">WOMBO!</div>
+                        <div class="game-combo" id="game-combo-7">AWESOME!</div>
+                    </div>
+                    
+                    <canvas width="240"  height="340" class="game-canvas" id='game-canvas'></canvas>
+                    <div class="game-btn-shadow_l"></div>
+                    <div class="game-btn-shadow_r"></div>
+                    <canvas width="860"  height="88" class="game-btn-canvas" id='game-btn'></canvas>
+                    <!--div class="game-btn-tap"></div-->
+                    <div id="game-btn-mid" class="game-btn-mid"></div>
+            </div>
+            <div id="game-fail" class="fail-screen">
+                <div class="fail-screen-text">Wasted</div>
+                <div id="game-share" class="popup">
+                    <div>Your score</div>
+                    <div id="popup__score" class="popup__score">1231</div>
+                    <div>You are <span id="popup-place" class="popup__place">1235</span> in the list </div>
+                    <div class="popup__share">
+                        <div>Share with your friends</div>
+                        <a href="#" id="fb" class="popup__facebook">Facebook</a>
+
+                        <a href="#" id="tw" class="popup__twitter">Twitter</a>
+                    </div>
+                    <div>Press <span id="popup-restart" class="popup__start">START</span> to play again</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="useDesctop">
+        <img src="img/logo.png">
+        <div class="text useDesctop__text">To play the game, please open the page in desktop browser.</div>
+    </div>
+
+    <audio id="music" loop src="./bird.mp3">
+    <audio id="wasted" src="./wasted.mp3">
+    <audio id="error" src="./error.mp3">
+
+    <!-- // <script src="/socket.io/socket.io.js"></script> -->
+    <script src="app.min.js"></script>
+
+</body>
+</html>
